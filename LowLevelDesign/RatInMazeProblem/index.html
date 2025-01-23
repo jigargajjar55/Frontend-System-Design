@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rat in a Maze</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Rat in a Maze</h1>
+    <div id="controls">
+        <button onclick="generateGrid()">Generate Grid</button>
+        <button onclick="startPathfinding()">Find Path</button>
+        <button onclick="pausePathfinding()">Pause</button>
+        <button onclick="restartPathfinding()">Restart</button>
+        <label>
+            Rows:
+            <input type="number" id="rows" min="2" max="20" value="5">
+        </label>
+        <label>
+            Columns:
+            <input type="number" id="cols" min="2" max="20" value="5">
+        </label>
+        <label>
+            Obstacles:
+            <input type="number" id="obstacles" min="2" max="20" value="2">
+        </label>
+    </div>
+    <div id="maze"></div>
+    <div id="message"></div>
+
+
+   <script src="script.js"></script>
+</body>
+</html>

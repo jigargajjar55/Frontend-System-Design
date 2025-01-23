@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#maze {
+    display: inline-grid;
+    border: 1px solid black;
+}
+
+.cell {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    border: 1px solid black;
+    background-color: #fff;
+}
+
+.cell.obstacle {
+    background-color: #555;
+}
+
+.cell.start {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.cell.end {
+    background-color: #FF5733;
+    color: #fff;
+}
+
+.cell.path {
+    background-color: #FFD700;
+}
+
+.cell.destPath{
+    background-color: #CBC3E3;
+}
+
+

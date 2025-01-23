@@ -1,0 +1,32 @@
+ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+li {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+ul{
+    list-style-type: none;
+    padding-left: 20px;
+}
+li{
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+}
+li::before{
+    content: "📁";
+    margin-right: 8px;
+}
+
+.file::before {
+    content: "📄 ";
+    margin-right: 5px;
+}
+
+
+
+

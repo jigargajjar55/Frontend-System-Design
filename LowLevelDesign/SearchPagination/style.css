@@ -1,0 +1,53 @@
+#postsContainer{
+    width:80%;
+    margin: 0 auto;
+    padding: 5%;
+  }
+  .post-section{
+    padding: 10px;
+    border-bottom: 1px solid #D3D3D3;
+  }
+  
+  .post-name{
+    font-weight:bold;
+    padding-right: 5px;
+    color: #4b53bc;
+    font-family: 'Arial'
+  }
+  
+  .post-type{
+    font-weight:bold;
+    padding-right: 5px;
+    color: #4b53bc;
+    font-family: 'Arial'
+  }
+  
+  .post-date{
+    letter-spacing: 0.8;
+    font-family: 'Arial';
+    font-size:12px;
+  }
+  
+  .post-message{
+    
+  }
+  
+  .pagination-container{
+    margin: 0 auto;
+    width:80%;
+  }
+  .pagination-btn{
+    outline:none;
+    border: none;
+    background-color: white;
+    border: 1px solid grey;
+    margin: 5px;
+  }
+  
+  .active{
+    background-color:grey;
+  }
+  
+  .highlight{
+    background-color: yellow;
+  }
