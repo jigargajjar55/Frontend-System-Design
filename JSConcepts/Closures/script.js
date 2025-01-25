@@ -156,6 +156,10 @@ function Counter(){
     console.log(count);
   }
 
+  this.getCounterValue = function(){
+    return count;
+  }
+
 }
 
 const counter11 = new Counter();
@@ -164,6 +168,39 @@ counter11.incrementCounter();
 
 
 counter11.decrementCounter();
+
+
+/*
+
+setTimeout & setInterval
+
+*/
+
+//setTimeout: Run code with a time delay
+setTimeout(() => {
+  console.log("Funcion A");
+}, 500);
+//this will log in console after 500 ms
+
+//setInterval: Run code every time interval
+
+let counter20 = new Counter();
+  
+const intervalID = setInterval(function(){
+
+  counter20.incrementCounter();
+  const countValue = counter20.getCounterValue();
+
+  if(countValue === 10){
+    clearInterval(intervalID);
+  }
+
+}, 500);
+ 
+
+
+
+
 
 
 
