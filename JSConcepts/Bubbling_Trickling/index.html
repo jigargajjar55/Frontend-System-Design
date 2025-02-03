@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling and Capturing</title>
+    <style>
+      div {
+        min-width: 100px;
+        min-height: 100px;
+        padding: 20px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <span
+      style="
+        font-size: 30pt;
+        display: flex;
+        justify-content: center;
+        padding-bottom: 20px;
+      "
+    >
+      Event Bubbling and Event Capturing
+    </span>
+
+    <div id="grandParent">
+      <p>Grand Parent</p>
+      <div id="parent">
+        <p>Parent</p>
+        <div id="child">
+          <p>Child</p>
+        </div>
+      </div>
+    </div>
+
+    <ul id="category">
+      <li id="laptops">Laptops</li>
+      <li id="cameras">Cameras</li>
+      <li id="shoes">Shoes</li>
+    </ul>
+
+    <div id="form">
+      <input type="text" id="name" data-uppercase/>
+      <input type="text" id="address" />
+      <input type="text" id="city" />
+      <input type="text" id="state" />
+      <input type="number" id="pincode" />
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
