@@ -196,12 +196,13 @@ const promise31 = new Promise(function (resolve, reject) {
   }, 3000);
 });
 
-Promise.allSettled([promise11, promise21, promise31]).then((results) => {
-  console.log(results);
-}).catch((err) => {
+Promise.allSettled([promise11, promise21, promise31])
+  .then((results) => {
+    console.log(results);
+  })
+  .catch((err) => {
     console.log(err);
-});
-
+  });
 
 /*
 
@@ -213,38 +214,39 @@ The Promise.race() static method takes an iterable of promises as input and retu
 */
 
 const promise12 = new Promise(function (resolve, reject) {
-    setTimeout(() => {
-      resolve("promise12 is fulfiled");
-    }, 5000);
-    // setTimeout(() => {
-    //     reject("promise12 is rejected")
-    // }, 5000);
-  });
-  const promise22 = new Promise(function (resolve, reject) {
-    // setTimeout(() => {
-    //     resolve("promise22 is fulfiled")
-    // }, 1000);
-  
-    setTimeout(() => {
-      reject("promise22 is rejected");
-    }, 1000);
-  });
-  const promise32 = new Promise(function (resolve, reject) {
-    setTimeout(() => {
-        resolve("promise32 is fulfiled")
-    }, 3000);
-  
-    // setTimeout(() => {
-    //   reject("promise32 is rejected");
-    // }, 3000);
-  });
-  
-  Promise.race([promise12, promise22, promise32]).then((results) => {
+  setTimeout(() => {
+    resolve("promise12 is fulfiled");
+  }, 5000);
+  // setTimeout(() => {
+  //     reject("promise12 is rejected")
+  // }, 5000);
+});
+const promise22 = new Promise(function (resolve, reject) {
+  // setTimeout(() => {
+  //     resolve("promise22 is fulfiled")
+  // }, 1000);
+
+  setTimeout(() => {
+    reject("promise22 is rejected");
+  }, 1000);
+});
+const promise32 = new Promise(function (resolve, reject) {
+  setTimeout(() => {
+    resolve("promise32 is fulfiled");
+  }, 3000);
+
+  // setTimeout(() => {
+  //   reject("promise32 is rejected");
+  // }, 3000);
+});
+
+Promise.race([promise12, promise22, promise32])
+  .then((results) => {
     console.log(results);
-  }).catch((err) => {
-      console.log(err);
+  })
+  .catch((err) => {
+    console.log(err);
   });
-  
 
 /*
 
@@ -254,38 +256,38 @@ The Promise.any() static method takes an iterable of promises as input and retur
 
 */
 
-
 const promise13 = new Promise(function (resolve, reject) {
-    // setTimeout(() => {
-    //   resolve("promise13 is fulfiled");
-    // }, 5000);
-    setTimeout(() => {
-        reject("promise13 is rejected")
-    }, 5000);
-  });
-  const promise23 = new Promise(function (resolve, reject) {
-    // setTimeout(() => {
-    //     resolve("promise23 is fulfiled")
-    // }, 1000);
-  
-    setTimeout(() => {
-      reject("promise23 is rejected");
-    }, 1000);
-  });
-  const promise33 = new Promise(function (resolve, reject) {
-    // setTimeout(() => {
-    //     resolve("promise33 is fulfiled")
-    // }, 3000);
-  
-    setTimeout(() => {
-      reject("promise33 is rejected");
-    }, 3000);
-  });
-  
-  Promise.any([promise13, promise23, promise33]).then((results) => {
+  // setTimeout(() => {
+  //   resolve("promise13 is fulfiled");
+  // }, 5000);
+  setTimeout(() => {
+    reject("promise13 is rejected");
+  }, 5000);
+});
+const promise23 = new Promise(function (resolve, reject) {
+  // setTimeout(() => {
+  //     resolve("promise23 is fulfiled")
+  // }, 1000);
+
+  setTimeout(() => {
+    reject("promise23 is rejected");
+  }, 1000);
+});
+const promise33 = new Promise(function (resolve, reject) {
+  // setTimeout(() => {
+  //     resolve("promise33 is fulfiled")
+  // }, 3000);
+
+  setTimeout(() => {
+    reject("promise33 is rejected");
+  }, 3000);
+});
+
+Promise.any([promise13, promise23, promise33])
+  .then((results) => {
     console.log(results);
-    
-  }).catch((err) => {
-      console.log(err);
-      console.log(err.errors);
+  })
+  .catch((err) => {
+    console.log(err);
+    console.log(err.errors);
   });
