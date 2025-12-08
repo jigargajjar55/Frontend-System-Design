@@ -63,10 +63,10 @@ const flattenObjectFunction = (userObject, parentName) => {
     } else if (Array.isArray(userObject[key])) {
       const childArr = userObject[key];
 
-      for (const {val,index} in childArr) {
+      for (const index in childArr) {
         
         const childObj = flattenObjectFunction(
-          val,
+          childArr[index],
           `${parentName}_${key}_${index}`
         );
         resultObj = {

@@ -86,35 +86,17 @@ const expensiveFunction = () => {
 
 const throttleFunction = function(fn, timeInterval){
 
-    // let lastTime = 0;
+    let isFunctionNotExecuted = true;
 
-    // return function(){
+    return function(...args){
 
-    //     const currTime = Date.now();
+        if(isFunctionNotExecuted){
 
-    //     if(currTime - lastTime >= timeInterval){
-    //         lastTime = currTime;
-
-    //         fn();
-    //     }
-
-    // }
-
-
-    let flag = true;
-
-    return function(){
-
-        let context = this,
-        args = arguments;
-
-        if(flag){
-
-            fn.apply(context, args);
-            flag = false;
+            fn(...args);
+            isFunctionNotExecuted = false;
 
             setTimeout(() => {
-                flag = true;
+                isFunctionNotExecuted = true;
             },timeInterval);
         }
     }
