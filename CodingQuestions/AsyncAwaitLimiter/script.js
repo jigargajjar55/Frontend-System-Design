@@ -26,7 +26,7 @@ const asyncPool = async (tasksList, limit) =>{
 
     }
 
-    await Promise.all(activeTasks);
+    await Promise.allSettled(activeTasks);
 
     return results;
         

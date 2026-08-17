@@ -65,7 +65,7 @@
 }
 
 .card-inner.flipped {
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
 
 .card-front,
@@ -87,5 +87,5 @@
   background-color: white;
   color: black;
 
-  transform: rotateX(180deg);
+  transform: rotateY(180deg);
 }
