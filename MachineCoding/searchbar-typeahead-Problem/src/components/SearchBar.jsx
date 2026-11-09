@@ -15,7 +15,7 @@ const SearchBar = () => {
   };
 
   useEffect(() => {
-    let isMounted = true;
+    const controller = new AbortController();
     const fetchData = async (query) => {
       try {
         if (!query || query.trim().length === 0) {
@@ -32,13 +32,12 @@ const SearchBar = () => {
 
         const resp = await fetch(
           `https://dummyjson.com/products/search?q=${query}`,
+          {signal:controller.signal}
         );
 
         const data = await resp.json();
 
-        if (!isMounted) {
-          return;
-        }
+        
         if (data && data.products && data.products.length > 0) {
           const results = data.products.map((item) => item.title);
           setSearchResults(results);
@@ -54,9 +53,7 @@ const SearchBar = () => {
 
     fetchData(debounceSearchTerm);
 
-    return () => {
-      isMounted = false;
-    };
+    return () => controller.abort();
   }, [debounceSearchTerm]);
 
   return (
